@@ -4,4 +4,4 @@ First specify the flatfield file(s). These images are called 'flats'.It is possi
 In case of more than 1 file these are averaged by the program and the averaged image will be used for correction.
 Second specify the images that must be corrected. These images are called 'lights'. You can use 1 ore more images.
 Third specify the variable 'sigma'. It is used to blur the flat file. Without this step the resulting image will be unintentionally sharpened.
-The higher the value of sigma the mor the flat file will be blured and the the light image will be less corrected. For most cases a value between 2 and 10 is good.
+The higher the value of sigma the more the flat file will be blured and the the light image will be less corrected. For most cases a value between 2 and 10 is good.
