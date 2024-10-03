@@ -22,3 +22,5 @@ Depending on the input images once the method separated channels or the method w
 At the end of the program a preview of the corrected image is given in comparison with the uncorrected, original image for both methods.
 The corrected images are stored in the same directory as the light images. They are named 'original-filename_cor_cs' in case of rgb channel separation or
 'original-filename_cor_nocs' in the case of no rgb channel separation.
+
+yafft.py is the main file.
