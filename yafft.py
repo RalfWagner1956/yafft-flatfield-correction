@@ -86,15 +86,14 @@ if dateierweiterung in raw_erweiterungen:
     for filename in filenames:  # Alle Dateinamen im aktuellen Verzeichnis einlesen
 
         ohneEndung = filename[:-4]  # Dateiendungen abspalten
-
+#+_cor+_nocs
         with rawpy.imread(filename) as raw:
             kkt_fg = raw.postprocess(gamma=(2.222, 3.0), no_auto_bright=True, auto_bright_thr=0.01,
                                          use_camera_wb=True, output_bps=16)
 
         kkt_cor, kkt_fg, kkt_bg = berechnungen.KeineKanaltrennung_cor(kkt_fg, kkt_bg, Faktor, mittelwert)
 
-        imageio.imsave(ohneEndung + 'bg-Sigma = ' + str(sigma_bg) + ', KeineKanaltrennung' + str(len(path_bg)) + ' Flats'  + '.tif',
-                       kkt_cor.astype('uint16'))
+        imageio.imsave(ohneEndung + '_cor_nocs' + '.tif', kkt_cor.astype('uint16'))
 
     with rawpy.imread(path_bg[0]) as raw:
         mkt_cor = raw.postprocess(gamma=(2.222, 3.0), no_auto_bright=True, auto_bright_thr=0.01, use_camera_wb=True,
@@ -123,8 +122,7 @@ if dateierweiterung in raw_erweiterungen:
 
         mkt_cor, mkt_fg, mkt_bg = berechnungen.MitKanaltrennung_cor(mkt_fg, mkt_bg, mkt_cor, Faktor, R_BG_mean, G_BG_mean, B_BG_mean)
 
-        imageio.imsave(ohneEndung + 'BG-Sigma = ' + str(sigma_bg) + ', Mit Kanaltrennung' + str(len(path_bg)) + ' Flats' + '.tif',
-                       mkt_cor.astype('uint16'))
+        imageio.imsave(ohneEndung + '_cor_cs' + '.tif', mkt_cor.astype('uint16'))
 
 # Berechnungen mit .jpg Dateien:
 
@@ -149,8 +147,7 @@ if dateierweiterung not in raw_tif_erweiterungen: # also ein .jpg!
 
         kkt_cor, kkt_fg, kkt_bg = berechnungen.KeineKanaltrennung_cor(kkt_fg, kkt_bg, Faktor, mittelwert)
 
-        imageio.imsave(ohneEndung + 'bg-Sigma = ' + str(sigma_bg) + ', KeineKanaltrennung' + str(len(path_bg)) + ' Flats' + '.jpg',
-                       kkt_cor.astype('uint8'))
+        imageio.imsave(ohneEndung + '_cor_nocs' +  '.jpg', kkt_cor.astype('uint8'))
 
     mkt_cor = imageio.imread(bg_name)
 
@@ -171,8 +168,7 @@ if dateierweiterung not in raw_tif_erweiterungen: # also ein .jpg!
 
         mkt_cor, mkt_fg, mkt_bg = berechnungen.MitKanaltrennung_cor(mkt_fg, mkt_bg, mkt_cor, Faktor, R_BG_mean, G_BG_mean, B_BG_mean)
 
-        imageio.imsave(ohneEndung + 'bg-Sigma = ' + str(sigma_bg) + ', mit Kanaltrennung' + str(len(path_bg)) + ' Flats'  + '.jpg',
-                           mkt_cor.astype('uint8'))
+        imageio.imsave(ohneEndung + '_cor_cs' +  '.jpg', mkt_cor.astype('uint8'))
 
 # Berechnungen mit ,tif Dateien:
 
@@ -197,8 +193,7 @@ if dateierweiterung in tif_erweiterungen:
 
         kkt_cor, kkt_fg, kkt_bg = berechnungen.KeineKanaltrennung_cor(kkt_fg, kkt_bg, Faktor, mittelwert)
 
-        imageio.imsave(ohneEndung + 'bg-Sigma = ' + str(sigma_bg) + ', KeineKanaltrennung-aus tif' + str(len(path_bg)) + ' Flats'  + '.tif',
-                       kkt_cor.astype('uint16'))
+        imageio.imsave(ohneEndung + '_cor_nocs' +  '.tif', kkt_cor.astype('uint16'))
 
     mkt_cor = imageio.imread(bg_name)
 
@@ -219,8 +214,7 @@ if dateierweiterung in tif_erweiterungen:
 
         mkt_cor, mkt_fg, mkt_bg = berechnungen.MitKanaltrennung_cor(mkt_fg, mkt_bg, mkt_cor, Faktor, R_BG_mean, G_BG_mean, B_BG_mean)
 
-        imageio.imsave(ohneEndung + 'bg-Sigma = ' + str(sigma_bg) + ', getrennte Kanäle aus tif' + str(len(path_bg)) + ' Flats'  + '.tif',
-                           mkt_cor.astype('uint16'))
+        imageio.imsave(ohneEndung + '_cor_cs' +  '.tif', mkt_cor.astype('uint16'))
 
 
 display_result.display_result(dateierweiterung, raw_tif_erweiterungen, filename, sigma_bg, kkt_cor, mkt_cor, kkt_fg, mkt_fg)
