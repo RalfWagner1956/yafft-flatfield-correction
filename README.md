@@ -20,5 +20,5 @@ Processing of images is done in two ways:
 Depending on the input images once the method separated channels or the method without separation will give the better correction
 
 At the end of the program a preview of the corrected image is given in comparison with the uncorrected, original image for both methods.
-The corrected images are stored in the same directory as the light images.
-
+The corrected images are stored in the same directory as the light images. They are named (original-filename)+_cor+_cs in case of rgb channel separation or
+(original-filename)+_cor+_nocs in the case of no rgb channel separation.
