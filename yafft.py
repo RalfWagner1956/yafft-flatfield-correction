@@ -1,3 +1,9 @@
+''' This program is published under the
+GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
+https://www.gnu.org/licenses/gpl-3.0.txt
+'''
+
+
 import os
 import rawpy
 import numpy as np

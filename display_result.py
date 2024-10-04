@@ -1,3 +1,9 @@
+''' This program is published under the
+GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
+https://www.gnu.org/licenses/gpl-3.0.txt
+'''
+
+
 def display_result(dateierweiterung, raw_tif_erweiterungen, filename, sigma_bg, kkt_cor, mkt_cor, kkt_fg, mkt_fg):
 
     import matplotlib.pyplot as plt
