@@ -1,5 +1,11 @@
 # yafft
-yafft means 'just another flatfield tool'. It is written in python and is intended to help in a flatfield correction of mainly images that are taken through a microscope. It works in the following way:
+yafft means 'just another flatfield tool'. It is written in python and is intended to help in a flatfield correction of mainly images that are taken through a microscope. 
+
+The program is published under the
+GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
+https://www.gnu.org/licenses/gpl-3.0.txt
+
+It works in the following way:
 
 First specify the flatfield file(s) in the first file input dialog. These images are called 'flats'.It is possible to use only one or more flatfield files.
 In case of more than 1 file these are averaged by the program and the averaged image will be used for correction.
