@@ -30,3 +30,4 @@ The corrected images are stored in the same directory as the light images. They 
 'original-filename_cor_nocs' in the case of no rgb channel separation.
 
 yafft.py is the main file.
+Download a windows .exe file here: https://www.dr-ralf-wagner.de/Forum/yafft.exe
