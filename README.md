@@ -29,5 +29,5 @@ At the end of the program a preview of the corrected image is given in compariso
 The corrected images are stored in the same directory as the light images. They are named 'original-filename_cor_cs' in case of rgb channel separation or
 'original-filename_cor_nocs' in the case of no rgb channel separation.
 
-yafft.py is the main file.
+yafft_dateitypen.py is the main file.
 Download a windows .exe file here: https://www.dr-ralf-wagner.de/Forum/yafft.exe
