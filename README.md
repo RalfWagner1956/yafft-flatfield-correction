@@ -7,8 +7,13 @@ https://www.gnu.org/licenses/gpl-3.0.txt
 
 It works in the following way:
 
-First specify the flatfield file(s) in the first file input dialog. These images are called 'flats'.It is possible to use only one or more flatfield files.
-In case of more than 1 file these are averaged by the program and the averaged image will be used for correction.
+First specify the flatfield file(s) in the first file input dialog. These images are called 'flats'. It is possible to use only one or more flatfield files.
+In case of more than one file these are averaged by the program and the averaged image will be used for correction.
+
+Next specify whether dark frames shall be used or not. If "yes" the dark frames are averaged resulting in a masterdark frame. This masterdark frame is later 
+subtracted from the lights in order to reduce noise. This is useful for long exporese times of the lights (> 1s). Dark frames are taken with the same ISO and same exposure time as the light frames, but
+no light is alloed to reach the sensor. You might just put the cap on the lense or otherwise darken the scene.
+
 
 Second specify the images that must be corrected in the second file input dialog. These images are called 'lights'. You can use 1 ore more images.
 
